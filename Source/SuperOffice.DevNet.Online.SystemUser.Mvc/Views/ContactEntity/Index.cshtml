@@ -1,0 +1,23 @@
+﻿@model SuperOffice.CRM.Services.ContactEntity
+
+
+<div align="center" class="div-content">
+    @if (Model != null)
+    {
+        var created = "";
+        if (Model.CreatedBy != null)
+        {
+            created = Model.CreatedBy.Name;
+        }
+            
+        <div style="padding-bottom: 20px; text-align: left">
+        <table>
+            <tr><td>Name</td><td>@Model.Name</td></tr>
+            <tr><td>Created By</td><td>@created</td></tr>
+            <tr><td>Created Date</td><td>@Model.CreatedDate</td></tr>
+        </table>
+        </div>
+    }
+    
+    <div style="padding-bottom: 20px;"><a href="@Url.Action("Index", "Home")">Home</a></div>
+</div>

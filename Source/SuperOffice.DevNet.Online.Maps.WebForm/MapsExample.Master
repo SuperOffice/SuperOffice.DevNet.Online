@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MapsExample.master.cs" Inherits="SuperOffice.DevNet.Online.Maps.WebForm.MapsExample" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        /*Red gridlines:
+        table {
+            border-collapse: collapse;
+            border: 1px solid #FF0000;
+        }
+
+            table td {
+                border: 1px solid #FF0000;
+            }*/
+
+        .OuterContainer {
+            padding: 0.55em;
+        }
+
+        .HugoIcon {
+            padding: 10px;
+            width: 64px;
+        }
+
+        .AppIcon {
+            padding: 10px;
+            width: 64px;
+        }
+
+        .AppHeader {
+            font-size: x-large;
+            font-family: serif;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .Description {
+            padding-top: 4em;
+            font-family: sans-serif;
+            font-size: smaller;
+        }
+
+        .ContentRow {
+            padding-top: 1em;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body >
+    <form id="form1" runat="server">
+        <table class="OuterContainer">
+            <tr>
+                <td class="HugoIcon">
+                    <img src="style/Hugo.png" width="64px" /></td>
+                <td class="AppIcon">
+                    <img src="style/Google-Maps-icon.png" width="64px" /></td>
+                <td class="AppHeader">SuperOffice Maps<span runat="server" id="_extraHeaderText"></span></td>
+            </tr>
+            <tr>
+                <td />
+                <td class="Description" colspan="2" runat="server" id="_description">This application adds Google Maps web panels to your SuperOffice CRM Online</td>
+            </tr>
+            <tr>
+                <td />
+                <td />
+                <td class="ContentRow">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

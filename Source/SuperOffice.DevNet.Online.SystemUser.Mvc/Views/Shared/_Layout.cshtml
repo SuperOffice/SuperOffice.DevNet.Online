@@ -1,0 +1,19 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperOffice SuperId Demo</title>
+    @Styles.Render( "~/Content/css" )
+
+</head>
+<body style="background-color: #00bfff">
+    <div>@RenderBody()</div>
+    <div class="container body-content">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - SuperId Demo Application for SuperOffice</p>
+        </footer>
+    </div>
+</body>
+</html>
