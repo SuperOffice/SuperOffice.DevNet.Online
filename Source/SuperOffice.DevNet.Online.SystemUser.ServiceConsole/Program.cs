@@ -87,6 +87,8 @@ namespace SuperOffice.DevNet.Online.SystemUser.ServiceConsole
         /// <returns>Token with claims</returns>
         private static SuperIdToken GetSystemUserToken(string userToken, string contextIdentifier)
         {
+            var tokenType = SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Jwt;
+
             var systemToken = new SystemToken(userToken);
 
             // Get certificate
@@ -98,17 +100,30 @@ namespace SuperOffice.DevNet.Online.SystemUser.ServiceConsole
             // Call the web service to exchange signed system user token with claims for the system user
             var federationGateway = ConfigurationManager.AppSettings["SoFederationGateway"];
             var returnedToken = systemToken.AuthenticateWithSignedSystemToken(federationGateway, signedSystemToken,
-                ConfigFile.Services.ApplicationToken, contextIdentifier, SuperID.Contracts.SystemUser.V1.TokenType.Saml);
+                ConfigFile.Services.ApplicationToken, contextIdentifier, tokenType);
 
             if(returnedToken != null)
             {
                 // Validate and return SuperId token for the system user
                 var tokenHandler = new SuperIdTokenHandler();
-                tokenHandler.CertificateValidator = System.IdentityModel.Selectors.X509CertificateValidator.None;
-                var certificateResolverPath = AppDomain.CurrentDomain.BaseDirectory + "Certificates";
-                tokenHandler.IssuerTokenResolver = new SuperOffice.SuperID.Client.Tokens.CertificateFileCertificateStoreTokenResolver(certificateResolverPath);
 
-                return tokenHandler.ValidateToken(returnedToken, SuperID.Contracts.SystemUser.V1.TokenType.Saml);
+                var certificateResolverPath = AppDomain.CurrentDomain.BaseDirectory + "Certificates";
+
+                if(tokenType == SuperID.Contracts.SystemUser.V1.TokenType.Saml)
+                {
+                    tokenHandler.CertificateValidator = System.IdentityModel.Selectors.X509CertificateValidator.None;
+                    tokenHandler.IssuerTokenResolver = new SuperOffice.SuperID.Client.Tokens.CertificateFileCertificateStoreTokenResolver(certificateResolverPath);
+                }
+                else
+                {
+                    tokenHandler.JwtIssuerSigningCertificate =
+                    new System.Security.Cryptography.X509Certificates.X509Certificate2(
+                        certificateResolverPath + "\\SODSuperOfficeFederatedLogin.crt");
+                }
+
+                tokenHandler.ValidateAudience = false;
+
+                return tokenHandler.ValidateToken(returnedToken, tokenType);
             }
 
             return null;
