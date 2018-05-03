@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UtilityLibraries", "UtilityLibraries", "{7A300942-4CCA-49A7-A3D8-02C7402F6B25}"
 EndProject
@@ -26,6 +26,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperOffice.DevNet.Online.SystemUser.ServiceConsole", "Source\SuperOffice.DevNet.Online.SystemUser.ServiceConsole\SuperOffice.DevNet.Online.SystemUser.ServiceConsole.csproj", "{2384A200-13AA-49F6-9B9E-0F28C942CEAD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperOffice.DevNet.Online.SystemUser.PartnerDBLibrary", "Source\SuperOffice.DevNet.Online.SystemUser.PartnerDBLibrary\SuperOffice.DevNet.Online.SystemUser.PartnerDBLibrary.csproj", "{980D63C9-8D77-4C5E-9CD8-EAC24D30C618}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationServer", "IntegrationServer", "{680DE153-1362-416D-AEB5-579D0DA93BC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperOffice.DevNet.Online.IntegrationServer", "Source\SuperOffice.DevNet.Online.IntegrationServer\MvcIntegrationServerApp\SuperOffice.DevNet.Online.IntegrationServer.csproj", "{7A44A641-2B50-430E-A842-45792A64F41E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperOffice.DevNet.JsonQuoteConnector", "Source\SuperOffice.DevNet.Online.IntegrationServer\JsonQuoteConnector\SuperOffice.DevNet.JsonQuoteConnector.csproj", "{F132651B-0A45-492F-A2DF-4E4EB581EFC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +125,30 @@ Global
 		{980D63C9-8D77-4C5E-9CD8-EAC24D30C618}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{980D63C9-8D77-4C5E-9CD8-EAC24D30C618}.Release|x86.ActiveCfg = Release|Any CPU
 		{980D63C9-8D77-4C5E-9CD8-EAC24D30C618}.Release|x86.Build.0 = Release|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Debug|x86.Build.0 = Debug|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Release|x86.ActiveCfg = Release|Any CPU
+		{7A44A641-2B50-430E-A842-45792A64F41E}.Release|x86.Build.0 = Release|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Debug|x86.Build.0 = Debug|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Release|x86.ActiveCfg = Release|Any CPU
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,5 +162,10 @@ Global
 		{C87F47A2-DFC3-4876-987F-87DD7B448E11} = {03FFD249-41D6-421D-A1F0-3C07662356BA}
 		{2384A200-13AA-49F6-9B9E-0F28C942CEAD} = {03FFD249-41D6-421D-A1F0-3C07662356BA}
 		{980D63C9-8D77-4C5E-9CD8-EAC24D30C618} = {7A300942-4CCA-49A7-A3D8-02C7402F6B25}
+		{7A44A641-2B50-430E-A842-45792A64F41E} = {680DE153-1362-416D-AEB5-579D0DA93BC1}
+		{F132651B-0A45-492F-A2DF-4E4EB581EFC0} = {680DE153-1362-416D-AEB5-579D0DA93BC1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86F81B4D-679B-4EC3-9260-510333E33E91}
 	EndGlobalSection
 EndGlobal

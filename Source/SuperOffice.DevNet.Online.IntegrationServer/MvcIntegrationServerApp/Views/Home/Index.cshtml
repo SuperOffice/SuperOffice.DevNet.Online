@@ -1,0 +1,26 @@
+﻿@using MvcIntegrationServerApp.Auth
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @if (!SuperOfficeAuthHelper.IsAuthorized())
+        {
+            <button onclick="@("location.href='"+ Url.Action("SuperIdLogin","Home")+ "'")">Login</button><br />
+        }
+        else
+        {
+            <button onclick="@("location.href='"+ Url.Action("SuperIdLogout","Home")+ "'")">Logout</button><br />
+        }
+
+    </div>
+</body>
+</html>

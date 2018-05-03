@@ -1,0 +1,39 @@
+[
+
+    {
+        "ERPPriceListKey": "#1",
+        "Name": "Mens apparel",
+        "Description": "Clothes for men",
+        "Currency": "NOK",
+        "ValidFromString": "2014-01-01T01:01:01Z",
+        "ValidToString": "2033-12-12T03:22:41Z",
+        "IsActive": true
+    },
+    {
+        "ERPPriceListKey": "#2",
+        "Name": "Womens apparel",
+        "Description": "Clothes for females",
+        "Currency": "NOK",
+        "ValidFromString": "2014-01-01T01:01:01Z",
+        "ValidToString": "2033-12-12T03:22:41Z",
+        "IsActive": true
+    },
+    {
+        "ERPPriceListKey": "#3",
+        "Name": "Orcs Apparel",
+        "Description": "Clothes for Orcs",
+        "Currency": "NOK",
+        "ValidFromString": "2004-01-01T01:01:01Z",
+        "ValidToString": "2014-12-12T03:22:41Z",
+        "IsActive": true
+    },
+    {
+        "ERPPriceListKey": "#4",
+        "Name": "Dragons Apparel",
+        "Description": "Clothes for dragons",
+        "Currency": "NOK",
+        "ValidFromString": "2014-01-01T01:01:01Z",
+        "ValidToString": "2033-12-12T03:22:41Z",
+        "IsActive": false
+    }
+]

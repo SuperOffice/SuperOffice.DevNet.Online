@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MvcIntegrationServerApp.Services.QuoteConnector" CodeBehind="QuoteConnector.svc.cs" %>
