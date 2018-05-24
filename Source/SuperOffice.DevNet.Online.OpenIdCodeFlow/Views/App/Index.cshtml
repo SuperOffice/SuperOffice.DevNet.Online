@@ -1,0 +1,31 @@
+﻿@model MvcTest.Models.AppModel
+@{
+    ViewBag.Title = "App";
+}
+
+<h2>App</h2>
+@if (Model.Error != null)
+{<h1>@Model.Error</h1> }
+else
+{
+<p>This is where the app logic goes.</p>
+<p><a href="@Model.BaseUrl">@Model.BaseUrl</a></p>
+<p>Access token: @Model.AccessToken </p>
+<p>Token expires: @Model.TimeLeft </p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Created</th>
+    </tr>
+    @foreach (var item in Model.Contacts)
+    {
+        <tr>
+            <td>@item.nameDepartment</td>
+            <td>@item.category</td>
+            <td>@item.registeredDate</td>
+        </tr>
+    }
+</table>
+}
