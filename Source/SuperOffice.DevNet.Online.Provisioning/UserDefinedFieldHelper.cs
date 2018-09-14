@@ -44,7 +44,7 @@ namespace SuperOffice.DevNet.Online.Provisioning
                 //else if (fieldType == UDefFieldType.LongText)
                 //    info.TextLength = 40;
 
-                udField = udfAgent.CreateDefaultUserDefinedFieldInfo();
+                udField = udfAgent.CreateUserDefinedFieldInfo(owner, type);
                 udField.Type = owner;
                 udField.FieldType = type;
                 udField.FieldLabel = name;
