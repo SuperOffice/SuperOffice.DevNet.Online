@@ -39,47 +39,46 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Words, Version=15.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Aspose.Words.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Aspose.Words.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.1.271, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Ionic.Zip.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SOCore, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SOCore.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SOCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SoDataBase, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoDataBase.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoDataBase.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SoLicense, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoLicense.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoLicense.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SuperOffice.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Contracts.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Contracts.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SuperOffice.FeatureToggles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.FeatureToggles.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.FeatureToggles.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SuperOffice.Mime, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Mime.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Mime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SuperOffice.Plugins, Version=2.0.3.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Plugins.dll</HintPath>
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Plugins.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

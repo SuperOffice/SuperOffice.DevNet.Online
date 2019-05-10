@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,162 +52,163 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Words">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Aspose.Words.dll</HintPath>
+    <Reference Include="Aspose.Words, Version=15.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Aspose.Words.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.1.271, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ionic.Zip">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Ionic.Zip.dll</HintPath>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SoBatchProcessing">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SoBatchProcessing.dll</HintPath>
+    <Reference Include="SoBatchProcessing, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SoBatchProcessing.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SOCore">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SOCore.dll</HintPath>
-    </Reference>
-    <Reference Include="SoDataBase">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoDataBase.dll</HintPath>
+    <Reference Include="SOCore, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SOCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SoLicense">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoLicense.dll</HintPath>
+    <Reference Include="SoDataBase, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoDataBase.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.AAAMock.Services">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.AAAMock.Services.dll</HintPath>
+    <Reference Include="SoLicense, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SoLicense.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.AAAMock.Services.Implementation">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.AAAMock.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.AAAMock.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.AAAMock.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Audience.Services">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Audience.Services.dll</HintPath>
+    <Reference Include="SuperOffice.AAAMock.Services.Implementation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.AAAMock.Services.Implementation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Audience.Services.Implementation">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Audience.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.Audience.Services, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Audience.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Contracts">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Contracts.dll</HintPath>
+    <Reference Include="SuperOffice.Audience.Services.Implementation, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Audience.Services.Implementation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.DCF">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.DCF.dll</HintPath>
+    <Reference Include="SuperOffice.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Contracts.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.DCF.Services">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.DCF.Services.dll</HintPath>
+    <Reference Include="SuperOffice.DCF, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.DCF.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.DCF.Services.Implementation">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.DCF.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.DCF.Services, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.DCF.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.FeatureToggles">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.FeatureToggles.dll</HintPath>
+    <Reference Include="SuperOffice.DCF.Services.Implementation, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.DCF.Services.Implementation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Messaging">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Messaging.dll</HintPath>
+    <Reference Include="SuperOffice.FeatureToggles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.FeatureToggles.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Messaging.Services">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Messaging.Services.dll</HintPath>
+    <Reference Include="SuperOffice.Messaging, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Messaging.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Messaging.Services.Implementation">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Messaging.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.Messaging.Services, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Messaging.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Mime">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Mime.dll</HintPath>
+    <Reference Include="SuperOffice.Messaging.Services.Implementation, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Messaging.Services.Implementation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Online.Core">
-      <HintPath>..\packages\SuperOffice.Crm.Online.Core.4.0.6194.115\lib\net45\SuperOffice.Online.Core.dll</HintPath>
+    <Reference Include="SuperOffice.Mime, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Mime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Online.IntegrationService">
-      <HintPath>..\packages\SuperOffice.Crm.Online.IntegrationServices.8.0.6193.207\lib\net45\SuperOffice.Online.IntegrationService.dll</HintPath>
+    <Reference Include="SuperOffice.Online.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.Crm.Online.Core.4.0.6194.115\lib\net45\SuperOffice.Online.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Online.IntegrationService.Contract">
-      <HintPath>..\packages\SuperOffice.Crm.Online.IntegrationServices.8.0.6193.207\lib\net45\SuperOffice.Online.IntegrationService.Contract.dll</HintPath>
+    <Reference Include="SuperOffice.Online.IntegrationService, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.Crm.Online.IntegrationServices.8.0.6193.207\lib\net45\SuperOffice.Online.IntegrationService.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Plugins">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Plugins.dll</HintPath>
+    <Reference Include="SuperOffice.Online.IntegrationService.Contract, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.Crm.Online.IntegrationServices.8.0.6193.207\lib\net45\SuperOffice.Online.IntegrationService.Contract.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Services">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.dll</HintPath>
+    <Reference Include="SuperOffice.Plugins, Version=2.0.3.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Core.8.0.6144.342\lib\net45\SuperOffice.Plugins.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Services.Implementation">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.Services, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Services.Versioned">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Versioned.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Implementation, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Implementation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Services.Versioned.Contract">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Versioned.Contract.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Versioned, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Versioned.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Services.Wcf">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Wcf.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Versioned.Contract, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Versioned.Contract.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.Services.WcfProxy">
-      <HintPath>..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.WcfProxy.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Wcf, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.Wcf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.SuperID.Client">
-      <HintPath>..\packages\SuperOffice.Crm.Online.Core.4.0.6194.115\lib\net45\SuperOffice.SuperID.Client.dll</HintPath>
+    <Reference Include="SuperOffice.Services.WcfProxy, Version=8.0.1000.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.NetServer.Services.8.0.6144.342\lib\net45\SuperOffice.Services.WcfProxy.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SuperOffice.SuperID.Contracts">
-      <HintPath>..\packages\SuperOffice.Crm.Online.Core.4.0.6194.115\lib\net45\SuperOffice.SuperID.Contracts.dll</HintPath>
+    <Reference Include="SuperOffice.SuperID.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.Crm.Online.Core.4.0.6194.115\lib\net45\SuperOffice.SuperID.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SuperOffice.SuperID.Contracts, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SuperOffice.Crm.Online.Core.4.0.6194.115\lib\net45\SuperOffice.SuperID.Contracts.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IdentityModel" />
-    <Reference Include="System.IdentityModel.Tokens.Jwt">
-      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
@@ -223,36 +222,36 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Http">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -305,7 +304,7 @@
     <Content Include="App_Data\Template\Pricelists.json" />
     <Content Include="App_Data\Template\Products.json" />
     <Content Include="App_Data\SOD_SuperOfficeFederatedLogin.crt" />
-    <Content Include="packages.config" />
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -346,10 +345,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Import Project="..\..\packages\SoOctoPack.3.0.2\tools\SoOctoPack.targets" Condition="Exists('..\..\packages\SoOctoPack.3.0.2\tools\SoOctoPack.targets')" />
   <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">

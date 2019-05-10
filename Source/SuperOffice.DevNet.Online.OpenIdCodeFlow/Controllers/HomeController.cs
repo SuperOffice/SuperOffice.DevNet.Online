@@ -25,11 +25,11 @@ namespace MvcTest.Controllers
 
                 var query = System.Web.HttpUtility.ParseQueryString(string.Empty);
                 query.Add("client_id", appId);
-                query.Add("redirect_url", appUrl);
+                query.Add("redirect_uri", appUrl);
                 query.Add("scope", "openid");
                 query.Add("state", state);
                 query.Add("response_type", "code"); // authorization flow
-                query.Add("response_mode", "form_data"); // instead of #fragment
+                query.Add("response_mode", "form_data"); // instead of #fragment or form_data
 
                 url += "/common/oauth/authorize?" + query.ToString();
 

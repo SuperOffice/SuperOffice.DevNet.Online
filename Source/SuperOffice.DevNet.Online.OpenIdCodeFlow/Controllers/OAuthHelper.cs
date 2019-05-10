@@ -83,6 +83,7 @@ namespace MvcTest.Controllers
             session["Expires"] = DateTime.Now.AddSeconds(tokens.expires_in);
             session["Token"] = superIdToken;
             session["NetServerUrl"] = superIdToken.NetserverUrl;
+            session["WebAPI_url"] = superIdToken.Claims.FirstOrDefault(c => c.ClaimType.Contains("webapi")).Resource;
         }
 
         public static SuperIdToken ValidateToken(HttpServerUtilityBase server, string token)

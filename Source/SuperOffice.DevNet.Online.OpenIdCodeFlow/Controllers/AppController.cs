@@ -33,7 +33,7 @@ namespace MvcTest.Controllers
                 error = RefreshAcessToken();
 
             string accessToken = Session["LoggedIn"] as string;
-            string baseUrl = Session["NetServerUrl"] as string; // https://xxx.yyy/api
+            string baseUrl = Session["WebAPI_url"] as string; // https://xxx.yyy/api
 
             var model = GetDataFromSuperOffice(baseUrl, accessToken);
             model.Error = error;
