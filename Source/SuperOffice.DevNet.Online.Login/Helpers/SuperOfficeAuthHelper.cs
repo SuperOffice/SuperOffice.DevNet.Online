@@ -260,9 +260,10 @@ namespace SuperOffice.DevNet.Online.Login
 
         public static bool TryLogin(CallbackModel model, out string errorReason)
         {
-            if (!String.IsNullOrEmpty(model.Saml))
-                return TryLogin(model.Saml, SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Saml.ToString(), out errorReason);
-            else if (!String.IsNullOrEmpty(model.Jwt))
+            //if (!String.IsNullOrEmpty(model.Saml))
+            //    return TryLogin(model.Saml, SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Saml.ToString(), out errorReason);
+            //else 
+            if (!String.IsNullOrEmpty(model.Jwt))
                 return TryLogin(model.Jwt, SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Jwt.ToString(), out errorReason);
             else
             {
