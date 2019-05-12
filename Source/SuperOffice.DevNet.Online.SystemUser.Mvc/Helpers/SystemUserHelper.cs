@@ -91,7 +91,7 @@ namespace SuperOffice.DevNet.Online.SystemUser.Mvc.Helpers
             using (var context = SoDatabaseContext.EnterDatabaseContext(token.ContextIdentifier))
             {
                 // set appropriate url for the customer tenant
-                ConfigFile.Services.RemoteBaseURL = token.NetserverUrl;
+                // ConfigFile.WebServices.RemoteBaseURL = token.NetserverUrl;
 
                 // Log in as the system user
                 using (var session = SoSession.Authenticate(new SoCredentials(token.Ticket)))

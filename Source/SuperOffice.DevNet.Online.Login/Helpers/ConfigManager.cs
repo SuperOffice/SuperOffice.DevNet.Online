@@ -40,5 +40,20 @@ namespace SuperOffice.DevNet.Online.Login
         {
             get { return ConfigurationManager.AppSettings["SoFederationGateway"]; }
         }
+
+        public static bool UseOidc
+        {
+            get
+            {
+                var useOidc = ConfigurationManager.AppSettings["UseOidc"];
+                return string.IsNullOrEmpty(useOidc) ? true : bool.Parse(useOidc); // Oidc by default
+            }
+        }
+
+        public static string AppId { get { return ConfigurationManager.AppSettings["SoAppId"]; } }
+
+        public static string CallbackURL { get { return ConfigurationManager.AppSettings["CallbackURL"]; } }
+
+        public static string AppToken { get { return SuperOffice.Configuration.ConfigFile.Services.ApplicationToken; } }
     }
 }

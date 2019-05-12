@@ -14,6 +14,7 @@ using SuperOffice.SuperID.Contracts.SystemUser.V1;
 using UserType = SuperOffice.License.UserType;
 using SuperOffice.Factory;
 using SuperOffice.DevNet.Online.Login.Repository;
+using Newtonsoft.Json.Linq;
 
 namespace SuperOffice.DevNet.Online.Login
 {
@@ -211,13 +212,40 @@ namespace SuperOffice.DevNet.Online.Login
         /// </summary>
         /// <param name="customerIdentifier">Optional Context identifier</param>
         /// <returns></returns>
-        public static string GetAuthenticateUrl(string customerIdentifier)
+        public static string GetAuthenticateUrl(string contextIdentifier)
         {
-            if (String.IsNullOrEmpty(customerIdentifier) ||customerIdentifier.ToLower() == "<uctx>")
-                customerIdentifier = "";
+            if (String.IsNullOrEmpty(contextIdentifier) || contextIdentifier.ToLower() == "<uctx>")
+                contextIdentifier = "";
 
-            return ConfigManager.SoFederationGateway + "?app_id=" + ConfigurationManager.AppSettings["SoAppId"] + "&ctx=" +
-                   customerIdentifier;
+            if(!ConfigManager.UseOidc)
+            {
+                var urlResult = ConfigManager.SoFederationGateway + "?app_id=" + ConfigManager.AppId;
+
+                var redirectUri = ConfigManager.CallbackURL;
+                if (!string.IsNullOrEmpty(redirectUri))
+                {
+                    urlResult += "&redirect_uri=" + redirectUri;
+                }
+
+                return urlResult += "&ctx=" + contextIdentifier;
+            }
+            
+            string state = Guid.NewGuid().ToString();
+            HttpContext.Current.Session["state"] = state;
+
+            //https://sod.superoffice.com/login/
+            //{ contextIdentifier}/oauth/authorize
+            //?response_type=id_token token
+            //&client_id = YOUR - APP - ID & redirect_uri = YOUR - REDIRECT - URL & scope = openid
+            //& state = 12345 & nonce = 7362CAEA - 9CA5 - 4B43 - 9BA3 - 34D7C303EBA7
+            if (string.IsNullOrEmpty(contextIdentifier))
+            {
+                return ConfigManager.SoFederationGateway + "common/oauth/authorize?response_type=code&client_id=" + ConfigManager.AppId + "&redirect_uri=" + ConfigManager.CallbackURL + "&response_mode=form_data&scope=openid&state=" + state;
+            }
+            else
+            {
+                return ConfigManager.SoFederationGateway + contextIdentifier + "/common/oauth/authorize?response_type=code&client_id=" + ConfigManager.AppId + "&redirect_uri=" + ConfigManager.CallbackURL + "&response_mode=form_data&scope=openid&state=" + state;
+            }
         }
 
 
@@ -256,15 +284,23 @@ namespace SuperOffice.DevNet.Online.Login
             }
         }
 
-
+        public static bool TryLogin(OidcModel model, out string errorReason)
+        {
+            return TryLogin(new CallbackModel() { Jwt = model.IdToken}, model, out errorReason);
+        }
 
         public static bool TryLogin(CallbackModel model, out string errorReason)
         {
-            //if (!String.IsNullOrEmpty(model.Saml))
-            //    return TryLogin(model.Saml, SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Saml.ToString(), out errorReason);
-            //else 
+            return TryLogin(model, null, out errorReason);
+        }
+
+        public static bool TryLogin(CallbackModel model, OidcModel oidcModel, out string errorReason)
+        {
+            
             if (!String.IsNullOrEmpty(model.Jwt))
-                return TryLogin(model.Jwt, SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Jwt.ToString(), out errorReason);
+                return TryLogin(model.Jwt, SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Jwt.ToString(), oidcModel, out errorReason);
+            else if (!String.IsNullOrEmpty(model.Saml))
+                return TryLogin(model.Saml, SuperOffice.SuperID.Contracts.SystemUser.V1.TokenType.Saml.ToString(), oidcModel, out errorReason);
             else
             {
                 errorReason = "SAML and JWT empty.";
@@ -272,14 +308,16 @@ namespace SuperOffice.DevNet.Online.Login
             }
         }
 
+
         /// <summary>
         /// Used by Online
         /// </summary>
         /// <param name="token">Saml or JWT token</param>
-        public static bool TryLogin(string token, string tokenType, out string errorReason)
+        public static bool TryLogin(string token, string tokenType, OidcModel oidcModel, out string errorReason)
         {
             errorReason = String.Empty;
             var tokenHandler = new SuperIdTokenHandler();
+            tokenHandler.ValidIssuer = oidcModel == null ? "SuperOffice AS" : "https://sod.superoffice.com"; // required for OIDC vs. Old Federated Auth...
 
             var useAppData = Convert.ToBoolean(ConfigurationManager.AppSettings["CertificatesInAppDataFolder"]);
 
@@ -315,7 +353,10 @@ namespace SuperOffice.DevNet.Online.Login
                 NetServerUrl = superIdClaims.NetserverUrl,
                 SystemToken = superIdClaims.SystemToken,
                 CustomerKey = String.Empty,
-                IsOnSiteCustomer = false
+                IsOnSiteCustomer = false,
+                AccessToken = oidcModel?.AccessToken,
+                IdToken = oidcModel?.IdToken,
+                RefreshToken = oidcModel?.RefreshToken
             };
             return TryLogin(context, out errorReason);
 
@@ -329,7 +370,7 @@ namespace SuperOffice.DevNet.Online.Login
         /// <param name="userId"></param>
         /// <param name="errorReason"></param>
         /// <returns></returns>
-        public static bool TryLogin(string customerKey, string ticket, string userId, out string errorReason)
+        public static bool TryLogin(string customerKey, string ticket, string userId, bool local, out string errorReason)
         {
             if (String.IsNullOrEmpty(customerKey))
             {
@@ -413,8 +454,17 @@ namespace SuperOffice.DevNet.Online.Login
                 //    */
                 //}
 
-                
-                SoSession session = SoSession.Authenticate(new SoCredentials() { Ticket = context.Ticket });
+                SoSession session = null; 
+
+                if (string.IsNullOrEmpty(context.AccessToken))
+                {
+                    session = SoSession.Authenticate(new SoCredentials() { Ticket = context.Ticket });
+
+                }
+                else
+                {
+                    session = SoSession.Authenticate(new SoAccessTokenSecurityToken(context.AccessToken));
+                }
 
                 var principal = SoContext.CurrentPrincipal;
                 OverrideContextIdentifier(principal, context.ContextIdentifier);
@@ -447,6 +497,32 @@ namespace SuperOffice.DevNet.Online.Login
         {
             var carrier = SuperOffice.Security.Principal.Private.PrincipalHelper.GetPrincipalCarrier(principal);
             carrier.DatabaseContextIdentifier = contextIdentifier;
+        }
+
+        public static OidcModel GetOAuthModel(string code)
+        {
+            HttpClient client = new HttpClient();
+            var parameters = new System.Collections.Generic.Dictionary<string, string> {
+                { "client_id", ConfigManager.AppId },
+                { "client_secret", ConfigManager.AppToken },
+                { "code", code },
+                { "redirect_uri", ConfigManager.CallbackURL },
+                { "grant_type", "authorization_code" }
+            };
+            var encodedContent = new FormUrlEncodedContent(parameters);
+
+            HttpResponseMessage response = client.PostAsync(ConfigManager.SoFederationGateway + "common/oauth/tokens", encodedContent).GetAwaiter().GetResult();
+            var responseStream = response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+            System.IO.StreamReader readStream = new System.IO.StreamReader(responseStream, System.Text.Encoding.UTF8);
+            var content = readStream.ReadToEnd();
+
+            var json = JObject.Parse(content);
+            string accessToken = json["access_token"].Value<string>();
+            string idToken = json["id_token"].Value<string>();
+            string refreshToken = json["refresh_token"].Value<string>();
+
+            return new OidcModel() { IdToken = idToken, AccessToken = accessToken, RefreshToken = refreshToken };
+
         }
     }
 }

@@ -26,20 +26,23 @@ namespace SuperOffice.DevNet.Online.Login
         public bool IsOnSiteCustomer { get; internal set; }
         public object WebClientUrl { get; internal set; }
         public bool? IsOnlineCustomer { get; internal set; }
+        public string IdToken { get; set; }
+        public string AccessToken { get; set; }
+        public string RefreshToken { get; set; }
 
         public string GetUsersInstallationUrl()
-		{
-			string url = string.Empty;
+        {
+            string url = string.Empty;
 
-			if( !NetServerUrl.IsNullOrEmpty() )
-			{
-				// Remove the /Remote/services?? from the url:
+            if (!NetServerUrl.IsNullOrEmpty())
+            {
+                // Remove the /Remote/services?? from the url:
 
-				url = NetServerUrl.Substring( 0, NetServerUrl.IndexOf( "/remote/", StringComparison.InvariantCultureIgnoreCase ) );
-			}
+                url = NetServerUrl.Substring(0, NetServerUrl.IndexOf("/remote/", StringComparison.InvariantCultureIgnoreCase));
+            }
 
-			return url;
-		}
+            return url;
+        }
 
 
     }

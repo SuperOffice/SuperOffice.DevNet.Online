@@ -12,11 +12,12 @@ using SuperOffice.Util;
 
 namespace SuperOffice.DevNet.Online.Maps.WebForm
 {
-	public partial class LoginRedirect : System.Web.UI.Page
-	{
-		protected void Page_Load( object sender, EventArgs e )
-		{
-			SetupVisibleParts();
+    public partial class LoginRedirect : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string error = string.Empty;
+            SetupVisibleParts();
 
             var requestType = Context.Request.RequestType;
             if (requestType.ToUpper() == "POST")
@@ -27,7 +28,6 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
                     Jwt = Context.Request["jwt"],
                 };
 
-                string error = string.Empty;
 
                 if (SuperOfficeAuthHelper.TryLogin(callbackModel, out error))
                 {
@@ -43,22 +43,48 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
                     explanationText.InnerText = "Login unsuccessful, reason: " + error;
                 }
             }
-		}
+            else
+            {
+                var code = Context.Request["code"];
+                var state = Context.Request["state"];
 
-		private void SetupVisibleParts()
-		{
-			var url = Context.Session["RedirectUrl"] as string;
-			if (url.IsNullOrEmpty())
-			{
-				redirectLink.Visible = false;
-				explanationText.Visible = false;
-				redirectUrl.InnerText = "No redirect url is registered.";
-			}
-			else
-			{
-				redirectLink.HRef = url;
-				redirectUrl.InnerText = url;
-			}
-		}
-	}
+                var sessionState = Context.Session["state"] as string;
+
+                if (sessionState.Equals(state))
+                {
+                    OidcModel oauthModel = SuperOfficeAuthHelper.GetOAuthModel(code);
+
+                    if (SuperOfficeAuthHelper.TryLogin(oauthModel, out error))
+                    {
+                        var redirectUr = Context.Session["RedirectUrl"] as string;
+                        Context.Session["RedirectUrl"] = "";
+
+                        if (!String.IsNullOrEmpty(redirectUr))
+                            Context.Response.Redirect(redirectUr);
+                    }
+                }
+                else
+                {
+                    explanationText.Visible = true;
+                    explanationText.InnerText = "Login unsuccessful, reason: " + error;
+                }
+            }
+        }
+
+        private void SetupVisibleParts()
+        {
+            var url = Context.Session["RedirectUrl"] as string;
+            if (url.IsNullOrEmpty())
+            {
+                redirectLink.Visible = false;
+                explanationText.Visible = false;
+                redirectUrl.InnerText = "No redirect url is registered.";
+            }
+            else
+            {
+                redirectLink.HRef = url;
+                redirectUrl.InnerText = url;
+            }
+        }
+    }
 }
