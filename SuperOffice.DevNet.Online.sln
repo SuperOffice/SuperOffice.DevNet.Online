@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UtilityLibraries", "UtilityLibraries", "{7A300942-4CCA-49A7-A3D8-02C7402F6B25}"
 EndProject
@@ -36,6 +36,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "REST API", "REST API", "{F5D97C38-7004-42C6-BB54-C19685392426}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperOffice.DevNet.Online.OpenIdCodeFlow.MVC", "Source\SuperOffice.DevNet.Online.OpenIdCodeFlow\SuperOffice.DevNet.Online.OpenIdCodeFlow.MVC.csproj", "{855848D5-359D-45A0-88D6-5297388C923A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "C:\Users\tony\source\repos\WcfService1\WcfService1.csproj", "{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +167,18 @@ Global
 		{855848D5-359D-45A0-88D6-5297388C923A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{855848D5-359D-45A0-88D6-5297388C923A}.Release|x86.ActiveCfg = Release|Any CPU
 		{855848D5-359D-45A0-88D6-5297388C923A}.Release|x86.Build.0 = Release|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Debug|x86.Build.0 = Debug|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Release|x86.ActiveCfg = Release|Any CPU
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -181,6 +195,7 @@ Global
 		{7A44A641-2B50-430E-A842-45792A64F41E} = {680DE153-1362-416D-AEB5-579D0DA93BC1}
 		{F132651B-0A45-492F-A2DF-4E4EB581EFC0} = {680DE153-1362-416D-AEB5-579D0DA93BC1}
 		{855848D5-359D-45A0-88D6-5297388C923A} = {F5D97C38-7004-42C6-BB54-C19685392426}
+		{BEC5B8B9-CED4-46BE-A9D0-D94E5CF49F3C} = {680DE153-1362-416D-AEB5-579D0DA93BC1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {86F81B4D-679B-4EC3-9260-510333E33E91}

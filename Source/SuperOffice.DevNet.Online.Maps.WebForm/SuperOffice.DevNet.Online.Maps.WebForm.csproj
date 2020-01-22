@@ -13,8 +13,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SuperOffice.DevNet.Online.Maps.WebForm</RootNamespace>
     <AssemblyName>SuperOffice.DevNet.Online.Maps.WebForm</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -43,124 +43,145 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Words, Version=15.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\Aspose.Words.dll</HintPath>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AngleSharp.0.9.11\lib\net45\AngleSharp.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <HintPath>..\..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="Aspose.Words, Version=15.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="CentralServices.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\CentralServices.Common.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\CentralServices.Common.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlSanitizer.4.0.217\lib\net45\HtmlSanitizer.dll</HintPath>
     </Reference>
     <Reference Include="Ical.Net, Version=4.1.8.0, Culture=neutral, PublicKeyToken=65c0446cd019ea53, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Ical.Net.4.1.10\lib\net46\Ical.Net.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.1.271, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\Ionic.Zip.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.9.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IdentityModel.JsonWebTokens.5.4.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IdentityModel.Logging.5.4.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IdentityModel.Tokens.5.4.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MimeKit, Version=1.16.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MimeKit.1.16.1\lib\net451\MimeKit.dll</HintPath>
+    <Reference Include="MimeKit, Version=2.1.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MimeKit.2.1.4\lib\net45\MimeKit.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NodaTime, Version=2.0.2.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NodaTime.2.0.2\lib\net45\NodaTime.dll</HintPath>
     </Reference>
-    <Reference Include="SoBatchProcessing, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SoBatchProcessing.dll</HintPath>
+    <Reference Include="SoBatchProcessing, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SoBatchProcessing.dll</HintPath>
     </Reference>
-    <Reference Include="SOCore, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\SOCore.dll</HintPath>
+    <Reference Include="SOCore, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\SOCore.dll</HintPath>
     </Reference>
-    <Reference Include="SoDataBase, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\SoDataBase.dll</HintPath>
+    <Reference Include="SoDataBase, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\SoDataBase.dll</HintPath>
     </Reference>
-    <Reference Include="SoLicense, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\SoLicense.dll</HintPath>
+    <Reference Include="SoLicense, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\SoLicense.dll</HintPath>
+    </Reference>
+    <Reference Include="SoMail, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\SoMail.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.CD.DSL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.4.7038.15\lib\net471\SuperOffice.CD.DSL.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7313.1732\lib\net48\SuperOffice.CD.DSL.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.CD.DSL.Database, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.4.7038.15\lib\net471\SuperOffice.CD.DSL.Database.dll</HintPath>
+    <Reference Include="SuperOffice.CD.DSL.Database, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7313.1732\lib\net48\SuperOffice.CD.DSL.Database.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.CD.DSL.Implementation, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.4.7038.15\lib\net471\SuperOffice.CD.DSL.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.CD.DSL.Implementation, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7313.1732\lib\net48\SuperOffice.CD.DSL.Implementation.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\SuperOffice.Contracts.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\SuperOffice.Contracts.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.DCF, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.DCF.dll</HintPath>
+    <Reference Include="SuperOffice.DCF, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.DCF.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.DCF.Services, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.DCF.Services.dll</HintPath>
+    <Reference Include="SuperOffice.DCF.Services, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.DCF.Services.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.DCF.Services.Implementation, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.DCF.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.DCF.Services.Implementation, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.DCF.Services.Implementation.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.FeatureToggles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\SuperOffice.FeatureToggles.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\SuperOffice.FeatureToggles.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Messaging, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Messaging.dll</HintPath>
+    <Reference Include="SuperOffice.Messaging, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Messaging.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Messaging.Services, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Messaging.Services.dll</HintPath>
+    <Reference Include="SuperOffice.Messaging.Services, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Messaging.Services.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Messaging.Services.Implementation, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Messaging.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.Messaging.Services.Implementation, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Messaging.Services.Implementation.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Mime, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\SuperOffice.Mime.dll</HintPath>
-    </Reference>
-    <Reference Include="SuperOffice.Online.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.Crm.Online.Core.3.0.5877.115\lib\net45\SuperOffice.Online.Core.dll</HintPath>
+    <Reference Include="SuperOffice.Online.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.Crm.Online.Core.4.0.7275.1215\lib\net472\SuperOffice.Online.Core.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.Plugins, Version=2.0.3.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.4.7038.15\lib\net471\SuperOffice.Plugins.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7313.1732\lib\net48\SuperOffice.Plugins.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Services, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Services.dll</HintPath>
+    <Reference Include="SuperOffice.Services, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Services.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Services.Implementation, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Services.Implementation.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Implementation, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Services.Implementation.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Services.Versioned, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Services.Versioned.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Versioned, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Services.Versioned.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Services.Versioned.Contract, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Services.Versioned.Contract.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Versioned.Contract, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Services.Versioned.Contract.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Services.Wcf, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Services.Wcf.dll</HintPath>
+    <Reference Include="SuperOffice.Services.Wcf, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Services.Wcf.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.Services.WcfProxy, Version=8.4.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.4.7038.15\lib\net471\SuperOffice.Services.WcfProxy.dll</HintPath>
+    <Reference Include="SuperOffice.Services.WcfProxy, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.NetServer.Services.8.5.7313.1732\lib\net48\SuperOffice.Services.WcfProxy.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.SuperID.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.Crm.Online.Core.3.0.5877.115\lib\net45\SuperOffice.SuperID.Client.dll</HintPath>
+    <Reference Include="SuperOffice.SuperID.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.Crm.Online.Core.4.0.7275.1215\lib\net472\SuperOffice.SuperID.Client.dll</HintPath>
     </Reference>
-    <Reference Include="SuperOffice.SuperID.Contracts, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.Crm.Online.Core.3.0.5877.115\lib\net45\SuperOffice.SuperID.Contracts.dll</HintPath>
+    <Reference Include="SuperOffice.SuperID.Contracts, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperOffice.Crm.Online.Core.4.0.7275.1215\lib\net472\SuperOffice.SuperID.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IdentityModel.Tokens.Jwt.5.4.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Reflection, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Reflection.4.1.0\lib\net462\System.Reflection.dll</HintPath>
       <Private>True</Private>
@@ -190,7 +211,6 @@
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
@@ -327,9 +347,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MapsExample.Master" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

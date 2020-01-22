@@ -52,10 +52,10 @@ namespace SuperOffice.DevNet.Online.SystemUser.ServiceConsole
                             using (var session = SoSession.Authenticate(new SoCredentials(token.Ticket)))
                             {
 
-                                var listHelper = new SuperOffice.DevNet.Online.Provisioning.ListHelper();
-                                listHelper.CreateSaleSourceListItem("NewSaleSource", "NewSaleSourceToolTip");
+                                //var listHelper = new SuperOffice.DevNet.Online.Provisioning.ListHelper();
+                                //listHelper.CreateSaleSourceListItem("NewSaleSource", "NewSaleSourceToolTip");
 
-                                // Do work as the system user
+                                //// Do work as the system user
                                 Log("Logged on to context {0} as {1}", token.ContextIdentifier, SoContext.CurrentPrincipal == null ? "Unknown" : SoContext.CurrentPrincipal.Associate);
                             }
                         }
