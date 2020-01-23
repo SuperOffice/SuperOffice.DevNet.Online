@@ -417,6 +417,13 @@ namespace SuperOffice.DevNet.Online.Login
         {
             Context = context;
 
+            //If we are allready authorized, then logout first, before creating a cookie....
+            if (SuperOffice.SoContext.IsAuthenticated)
+            {
+                SuperOffice.SoContext.CloseCurrentSession();
+                SuperOfficeAuthHelper.Logout();
+            }
+
             // Use forms authentication - this is optional
             var soFormsTicket = new FormsAuthenticationTicket(context.Email, false, 3600);
             var soFormsTicketEncrypted = FormsAuthentication.Encrypt(soFormsTicket);
@@ -425,12 +432,7 @@ namespace SuperOffice.DevNet.Online.Login
             httpContext.Session[ConfigManager.SoAuthCookie] = soFormsTicketEncrypted;
             httpContext.Response.Cookies.Add(new HttpCookie(ConfigManager.SoAuthCookie, soFormsTicketEncrypted));
 
-            //If we are allready authorized, then logout first.
-            if (SuperOffice.SoContext.IsAuthenticated)
-            {
-                SuperOffice.SoContext.CloseCurrentSession();
-                SuperOfficeAuthHelper.Logout();
-            }
+
 
             try
             {
