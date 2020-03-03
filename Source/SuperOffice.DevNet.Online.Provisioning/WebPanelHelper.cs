@@ -17,6 +17,8 @@ namespace SuperOffice.DevNet.Online.Provisioning
         private const string _buttonWindowFormat = "{0}ButtonWindow";
         private const string _locationPrefixFormat = "soprotocol:browser.{0}";
 
+        public string Description => _webPanelDescription;
+
         public WebPanelHelper()
         {
 
@@ -54,7 +56,6 @@ namespace SuperOffice.DevNet.Online.Provisioning
                                                     , urlEncoding
                                                     , showInAddressBar, showInMenuBar, showInStatusBar, showInToolBar
                                                     , false);	// NB!
-                    ClearCache();
                     return webPanelEntity;
                 }
                 else
@@ -64,7 +65,6 @@ namespace SuperOffice.DevNet.Online.Provisioning
             else
             {
                 WebPanelEntity webPanelEntity = CreateBasicWebPanel(name, locWindowName, url, appearLocation, urlEncoding, showInAddressBar, showInMenuBar, showInStatusBar, showInToolBar);
-                ClearCache();
                 return webPanelEntity;
             }
         }
@@ -73,6 +73,7 @@ namespace SuperOffice.DevNet.Online.Provisioning
         {
             using (var listAgent = new SuperOffice.CRM.Services.ListAgent())
             {
+                // gets both your webpanels and those created by others.
                 var webPanels = listAgent.GetWebPanelList();
                 //var englName = SuperOffice.CRM.Globalization.CultureDataFormatter.ParseMultiLanguageString(name, "EN");
                 webPanel = webPanels.FirstOrDefault(wp => wp.Name.StartsWith(name, StringComparison.InvariantCultureIgnoreCase) || wp.WindowName.StartsWith(windowName, StringComparison.InvariantCultureIgnoreCase));
@@ -120,22 +121,8 @@ namespace SuperOffice.DevNet.Online.Provisioning
                 webButtonEntity = CreateBasicWebPanel(buttonName, buttonWindowName, buttonUrl, Navigation.NavigatorButton, urlEncoding, showInAddressBar, showInMenuBar, showInStatusBar, showInToolBar);    
             }
 
-            ClearCache();
-
             return new WebPanelEntity[] { webPanelEntity, webButtonEntity };
-        }
-
-        private string ParseSafeName(string name, string formatString)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-                return string.Empty;
-
-
-            var cleanName = Regex.Replace(name, "[^0-9a-zA-Z]+", "");
-            return string.Format(formatString, cleanName);
-        }
-
-        
+        }        
 
         private WebPanelEntity CreateBasicWebPanel(string name, string windowName, string url, Navigation appearLocation,
             UrlEncoding urlEncoding = UrlEncoding.None,
@@ -178,6 +165,12 @@ namespace SuperOffice.DevNet.Online.Provisioning
             return mainWebPanelEntity;
         }
 
+        /// <summary>
+        /// This only clears the cache on the application server, not the web server.
+        /// This means that the web panels will still be visible in the UI, until 
+        /// a /default.aspx?flush is requested.
+        /// </summary>
+        /// <param name="cacheName"></param>
         public void ClearCache(string cacheName = null)
         {
             using (var diagAgent = new DiagnosticsAgent())
@@ -218,34 +211,26 @@ namespace SuperOffice.DevNet.Online.Provisioning
             return webPanel;
         }
 
-
-        public void DeleteWebPanel(string appName, string webPanelName)
-        {
-            var fkHelper = new ForeignKeyHelper();
-
-            int key = fkHelper.DeleteWebPanel(appName, webPanelName);
-        }
-
-        public void DeleteWebPanelOnly(int soIdentity)
+        public void DeleteWebPanel(int webPanelId)
         {
             using (var listAgent = new SuperOffice.CRM.Services.ListAgent())
             {
-                var webPanel = listAgent.GetWebPanelEntity(soIdentity);
-                webPanel.Deleted = true;
-                listAgent.SaveWebPanelEntity(webPanel);
+                // hard-delete
+                var webPanel = listAgent.GetWebPanelEntity(webPanelId);
+                listAgent.DeleteWebPanel(webPanelId);
             }
-            ClearCache();
         }
 
-        public void DeleteAllWebPanelsInForeignKeyTables(string appName)
+        /// <summary>
+        /// Deletes all web panels created by this application.
+        /// </summary>
+        public void DeleteAllWebPanels()
         {
-            var fkHelper = new ForeignKeyHelper();
-            var webPanels = fkHelper.GetWebPanelIdentifiers(appName);
-
-            foreach (var webPanel in webPanels)
-                fkHelper.DeleteWebPanel(appName, webPanel.Key);
-
-            ClearCache();
+            using (ListAgent listAgent = new ListAgent())
+            {
+                // hard-delete
+                listAgent.DeleteAppWebPanels();
+            }
         }
 
 
@@ -253,40 +238,23 @@ namespace SuperOffice.DevNet.Online.Provisioning
         {
             try
             {
-                var fkHelper = new ForeignKeyHelper();
-                if (!fkHelper.DoesKeyForWebPanelExist(name, webPanelName))
-                {
-                    var panel = CreateWebPanel(webPanelName, url + "&ctx=" + SoDatabaseContext.GetCurrent().ContextIdentifier, navigation);
-
-                    // Now we need to remember this panel so that we can remove it later should the user stop paying, or end the contract:
-                    // We shall use the foreign keys system in the customers database to do this. We could make a database and hold the information there; 
-                    // if you take a monthly fee for the app you should do this anyway, but in this example we assume a free license or one-time fee:
-                    if (panel != null)
-                        fkHelper.AddKeyForWebPanel(name, webPanelName, panel.WebPanelId);
-                }
+                var panel = CreateWebPanel(webPanelName, url + "&ctx=" + SoDatabaseContext.GetCurrent().ContextIdentifier, navigation);
             }
             catch (WebPanelNameNotUniqueException ex)
             {
-                // If the panel already exists, I guess that is OK, then
+                // If the panel already exists, I guess that is OK
             }
         }
 
-        public Dictionary<string, int> GetInstalledWebPanelIdentifiers(string appName)
-        {
-            var fkHelper = new ForeignKeyHelper();
-
-            return fkHelper.GetWebPanelIdentifiers(appName);
-        }
-
         /// <summary>
-        /// Gets a list of <list type="WebPanelEntity">WebPanelEntity</list>.
+        /// Gets a list of <see cref="WebPanelEntity"/> defined by your application.
         /// </summary>
-        /// <returns>List of <list type="WebPanelEntity">WebPanelEntity</list>.</returns>
+        /// <returns>List of <see cref="WebPanelEntity"/> created with this client_id.</returns>
         public WebPanelEntity[] GetAllWebPanels()
         {
             using (ListAgent listAgent = new ListAgent())
             {
-                return listAgent.GetWebPanelList();
+                return listAgent.GetAppWebPanels();
             }
         }
 
@@ -374,6 +342,17 @@ namespace SuperOffice.DevNet.Online.Provisioning
             }
 
             return webPanelListId;
+        }
+
+
+        private string ParseSafeName(string name, string formatString)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                return string.Empty;
+
+
+            var cleanName = Regex.Replace(name, "[^0-9a-zA-Z]+", "");
+            return string.Format(formatString, cleanName);
         }
     }
 }

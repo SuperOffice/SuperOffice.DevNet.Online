@@ -165,7 +165,6 @@
     <Compile Include="ForeignKeyHelper.cs" />
     <Compile Include="ListHelper.cs" />
     <Compile Include="UserDefinedFieldHelper.cs" />
-    <Compile Include="WebPanelExtensions.cs" />
     <Compile Include="WebPanelNameNotUniqueException.cs" />
     <Compile Include="WebPanelHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

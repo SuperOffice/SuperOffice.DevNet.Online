@@ -38,9 +38,9 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
 
 			var wpHelper = new WebPanelHelper();
 
-			var webpanels = wpHelper.GetInstalledWebPanelIdentifiers( Global.AppName ).ToArray();
+			var webpanels = wpHelper.GetAllWebPanels();
 
-			if (webpanels.Length == 0)
+			if (webpanels == null || webpanels.Length == 0)
 			{
 				_webPanelList.Items.Add( new ListItem
 				{
@@ -53,8 +53,8 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
 				{
 					_webPanelList.Items.Add(new ListItem
 					{
-						Text = webpanel.Key,
-						Value = webpanel.Value.ToString()
+						Text = webpanel.Name,
+						Value = webpanel.WebPanelId.ToString()
 					});
 				}
 
@@ -66,7 +66,7 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
             SuperOfficeAuthHelper.Authorize();
 
 			var wpHelper = new WebPanelHelper();
-			wpHelper.DeleteAllWebPanelsInForeignKeyTables( Global.AppName );
+			wpHelper.DeleteAllWebPanels();
 
 			this.ProvideFeedbackToTheUser();
 		}

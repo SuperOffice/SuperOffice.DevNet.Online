@@ -40,7 +40,7 @@ namespace SuperOffice.DevNet.Online.News.WebForm
             if (SoContext.CurrentPrincipal.HasFunctionRight("admin-all"))
             {
                 var wpHelper = new WebPanelHelper();
-                wpHelper.DeleteAllWebPanelsInForeignKeyTables(Global.AppName);
+                wpHelper.DeleteAllWebPanels();
 
                 this.ProvideFeedbackToTheUser();
             }

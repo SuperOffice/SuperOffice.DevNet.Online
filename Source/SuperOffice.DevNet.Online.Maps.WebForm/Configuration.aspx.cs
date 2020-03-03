@@ -28,9 +28,9 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
 
 			// Is this the first time, or later?
 			var helper = new WebPanelHelper();
-			var installedWebPanelIds = helper.GetInstalledWebPanelIdentifiers( Global.AppName );
+			var installedWebPanels = helper.GetAllWebPanels();
 
-			if( installedWebPanelIds != null && installedWebPanelIds.Count != 0 )
+			if (installedWebPanels != null && installedWebPanels.Length != 0)
 			{
 				_isAnUpdate = true;
 				if( !IsPostBack )
@@ -38,8 +38,15 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
 					// The system has been installed, now the user wants to change the configuration:
 					foreach( var product in _products.Values )
 					{
-						var id = installedWebPanelIds.FirstOrDefault( w => w.Key == product.LinkName );
-						product.IsSelected = id.Key != null && id.Key == product.LinkName;
+						var id = installedWebPanels.FirstOrDefault( w => w.Name == product.LinkName );
+						if(id != null)
+						{
+							product.IsSelected = id.Name == product.LinkName && !id.Deleted;
+						}
+						else
+						{
+							product.IsSelected = false;
+						}
 					}
 				}
 			}
@@ -147,7 +154,7 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
 			if( _isAnUpdate )
 			{
 				var helper = new WebPanelHelper();
-				var installedWebPanelIds = helper.GetInstalledWebPanelIdentifiers( Global.AppName );
+				var installedWebPanels = helper.GetAllWebPanels();
 
 				// Four possibilities:
 				// Installed	Selected	Result
@@ -157,11 +164,20 @@ namespace SuperOffice.DevNet.Online.Maps.WebForm
 				//							Do nothing
 				foreach( var product in _products.Values )
 				{
-					var isInstalled = installedWebPanelIds.ContainsKey( product.LinkName );
-					if( isInstalled )
+					var isInstalled = installedWebPanels.Any( wp => wp.Name == product.LinkName );
+					if( isInstalled ) // or exists..
 					{
-						if( !product.IsSelected ) // -> Delete
-							helper.DeleteWebPanel( Global.AppName, product.LinkName );
+						var webPanelId = installedWebPanels.Where(wp => wp.Name == product.LinkName).FirstOrDefault();
+
+						if ( !product.IsSelected && webPanelId != null) // -> Delete
+						{
+							if(webPanelId.WebPanelId > 0)
+								helper.DeleteWebPanel(webPanelId.WebPanelId);
+						}
+						else  // -> Undelete
+						{
+							_ = helper.CreateWebPanel(webPanelId.Name, webPanelId.Url, webPanelId.VisibleIn);
+						}
 					}
 					else
 					{

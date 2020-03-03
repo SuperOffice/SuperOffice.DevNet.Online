@@ -9,70 +9,54 @@ namespace SuperOffice.DevNet.Online.Provisioning
 	/// 
 	/// NB! The foreign key system has a three dimensional structure, where the dimensions are 
 	/// named "App", "Device" and "Key". 
-	/// To store information about web panels we only need two, so to keep this a little simple 
+	/// To store information we only need two, so to keep this a little simple 
 	/// implementation-wise, we did something a little confusing: 
 	/// We have one "App" for all Partners, the device level is named using the partner app name 
-	/// and the key is the web panel name. This is hidden in the implementation details, of course.
+	/// and the key is the name. This is hidden in the implementation details, of course.
 	/// </summary>
 	public class ForeignKeyHelper
 	{
 		readonly ForeignSystemAgent fsa = new ForeignSystemAgent();
 
 		private const string ForeignKeyAppName = "Partner.Apps";
-		private const string WebTableName = "extapp";
-		private const string WebTableFakeValue = "PartnerApp";
-
-		public Dictionary< string, int > GetWebPanelIdentifiers( string appName )
-		{
-			var retv = new Dictionary< string, int >();
-			var partnerApp = fsa.GetDeviceByName( ForeignKeyAppName, appName );
-			if( partnerApp != null )
-			{
-				var keys = fsa.GetDeviceKeys( ForeignKeyAppName, partnerApp.Name );
-				if( keys != null )
-					foreach (var key in keys)
-						retv.Add( key.Key, key.RecordId );
-			}
-
-			return retv;
-		}
+		private const string TableName = "extapp";
+		private const string TableFakeValue = "PartnerApp";
 
 		/// <summary>
 		/// 
 		/// </summary>
 		/// <param name="appName"></param>
-		/// <param name="webPanelName"></param>
-		/// <param name="webPanelListId"></param>
-		public void AddKeyForWebPanel(string appName, string webPanelName, int webPanelListId)
+		/// <param name="keyName"></param>
+		/// <param name="recordId"></param>
+		public void AddKeyForId(string appName, string keyName, int recordId)
 		{
 			var app = GetApp();
 
-			var key = fsa.GetKeyByValue( ForeignKeyAppName, appName, webPanelName, WebTableFakeValue, WebTableName );
+			var key = fsa.GetKeyByValue( ForeignKeyAppName, appName, keyName, TableFakeValue, TableName );
 			if( key == null )
 			{
 				key = new ForeignKey
 				{
-					Key = webPanelName,
-					RecordId = webPanelListId,
-					TableName = WebTableName,
-					Value = WebTableFakeValue,
+					Key = keyName,
+					RecordId = recordId,
+					TableName = TableName,
+					Value = TableFakeValue,
 				};
 
 				key = fsa.SaveForeignKey( key, ForeignKeyAppName, appName, appName );
 			}
 		}
 
-		public bool DoesKeyForWebPanelExist(string appName, string webPanelName)
+		public bool DoesKeyExist(string appName, string keyName)
 		{
-			var key = GetWebPanelKey(appName, webPanelName);
+			var key = GetKey(appName, keyName);
 
 			return key != null;
 		}
 
-		public ForeignKey GetWebPanelKey(string appName, string webPanelName)
+		public ForeignKey GetKey(string appName, string key)
 		{
-			var key = fsa.GetKeyByValue(ForeignKeyAppName, appName, webPanelName, WebTableFakeValue, WebTableName);
-			return key;
+			return fsa.GetKeyByValue(ForeignKeyAppName, appName, key, TableFakeValue, TableName);
 		}
 
 		private ForeignAppEntity GetApp()
@@ -85,23 +69,6 @@ namespace SuperOffice.DevNet.Online.Provisioning
 				app = fsa.SaveForeignAppEntity(app);
 			}
 			return app;
-		}
-
-		/// <summary>
-		/// NB! Also deletes the webpanel itself
-		/// </summary>
-		/// <param name="appName"></param>
-		/// <param name="webPanelName"></param>
-		public int DeleteWebPanel(string appName, string webPanelName, bool deleteWebPanelItself = true)
-		{
-			int key = DeleteKey(ForeignKeyAppName, appName, webPanelName, WebTableFakeValue, WebTableName);
-			if( key != 0 && deleteWebPanelItself )
-			{
-				var wpHelper = new WebPanelHelper();
-				wpHelper.DeleteWebPanelOnly( key );
-			}
-
-			return key;
 		}
 
 		/// <summary>

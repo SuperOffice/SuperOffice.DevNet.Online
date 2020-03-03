@@ -83,9 +83,7 @@ namespace SuperOffice.DevNet.Online.Provisioning
             using (UserDefinedFieldInfoAgent udfAgent = new UserDefinedFieldInfoAgent())
             {
                 udfAgent.SetPublishStartSystemEvent(owner);
-
-                if (udfAgent.IsPublishEventActive(owner))
-                    udfAgent.Publish(owner);
+                udfAgent.Publish(owner);
             }
 
         }
