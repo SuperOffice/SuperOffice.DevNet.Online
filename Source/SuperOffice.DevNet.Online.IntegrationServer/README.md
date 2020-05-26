@@ -21,8 +21,7 @@ The second project is an MVC web application that serves the following purpose(s
 1. Register a new SOD application.
     - a. Define it as a Quote Connector and provide a URL that is both accessible and you are able to debug.
 
-2. Download the Example Application: IntegrationServerExample.zip
-    - https://community.superoffice.com/online-sdk-downloads 
+2. Clone this repo and option the SuperOffice.DevNet.Online.IntegrationServer project.
 
 3. Update the following settings in the Web.Config:
     - a. ApplicationId in App Settings
