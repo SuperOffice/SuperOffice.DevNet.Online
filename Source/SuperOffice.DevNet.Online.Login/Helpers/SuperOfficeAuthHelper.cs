@@ -244,7 +244,7 @@ namespace SuperOffice.DevNet.Online.Login
             }
             else
             {
-                return ConfigManager.SoFederationGateway + contextIdentifier + "/common/oauth/authorize?response_type=code&client_id=" + ConfigManager.AppId + "&redirect_uri=" + ConfigManager.CallbackURL + "&response_mode=form_data&scope=openid&state=" + state;
+                return ConfigManager.SoFederationGateway + contextIdentifier + "/oauth/authorize?response_type=code&client_id=" + ConfigManager.AppId + "&redirect_uri=" + ConfigManager.CallbackURL + "&response_mode=form_data&scope=openid&state=" + state;
             }
         }
 
