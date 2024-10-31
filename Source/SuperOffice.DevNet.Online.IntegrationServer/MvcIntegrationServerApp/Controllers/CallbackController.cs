@@ -17,7 +17,6 @@ namespace MvcIntegrationServerApp.Controllers
         /// </summary>
         /// <param name="callbackModel"></param>
         /// <returns></returns>
-        [HttpPost]
         [ValidateInput(false)]
         public ActionResult Index(string jwt)
         {

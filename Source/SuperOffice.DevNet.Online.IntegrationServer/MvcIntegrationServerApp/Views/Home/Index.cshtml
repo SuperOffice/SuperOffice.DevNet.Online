@@ -15,6 +15,9 @@
         @if (!SuperOfficeAuthHelper.IsAuthorized())
         {
             <button onclick="@("location.href='"+ Url.Action("SuperIdLogin","Home")+ "'")">Login</button><br />
+
+            <button onclick = "@("location.href = '" + Url.Action("Login", "Auth") + "'")"> Login New</button ><br/>
+
         }
         else
         {
