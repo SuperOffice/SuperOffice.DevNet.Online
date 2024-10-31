@@ -634,3 +634,4 @@ Temporary Items
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
+/Source/SuperOffice.DevNet.Online.IntegrationServer/MvcIntegrationServerApp/appsettings.json
