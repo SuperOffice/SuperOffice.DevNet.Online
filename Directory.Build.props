@@ -1,5 +1,5 @@
 <Project>
     <PropertyGroup>
-        <NetserverVersion>9.2.7935.930</NetserverVersion>
+        <NetserverVersion>10.0.6.1213</NetserverVersion>
     </PropertyGroup>
 </Project>

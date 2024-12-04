@@ -25,6 +25,7 @@
     <PackageReference Include="SuperOffice.Crm.Online.Core" Version="4.0.7275.1215" />
     <PackageReference Include="SuperOffice.Crm.Online.IntegrationServices" Version="$(NetserverVersion)" />
     <PackageReference Include="SuperOffice.NetServer.Services" Version="$(NetserverVersion)" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" />
   </ItemGroup>
 
   <ItemGroup>

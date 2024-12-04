@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using SuperOffice.CRM.Globalization;
 using SuperOffice.DevNet.Online.Login;
-using SuperOffice.Services75;
-using SuperOffice.Util;
 
 namespace SuperOffice.DevNet.Online.Maps.WebForm
 {
