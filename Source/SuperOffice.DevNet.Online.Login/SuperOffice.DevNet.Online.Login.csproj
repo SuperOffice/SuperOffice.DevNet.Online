@@ -20,4 +20,13 @@
     <PackageReference Include="SuperOffice.NetServer.Services" Version="8.5.7313.1732" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- nuget conflict resolution -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+
+  </ItemGroup>
+
 </Project>
