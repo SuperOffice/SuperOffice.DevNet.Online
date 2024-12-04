@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.7" />
-    <PackageReference Include="SuperOffice.NetServer.Services" Version="8.5.7313.1732" />
+    <PackageReference Include="SuperOffice.NetServer.Services" Version="9.2.7935.930" />
   </ItemGroup>
 
   <ItemGroup>

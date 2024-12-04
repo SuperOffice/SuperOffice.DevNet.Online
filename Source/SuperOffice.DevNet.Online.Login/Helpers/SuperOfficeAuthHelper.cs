@@ -497,7 +497,7 @@ namespace SuperOffice.DevNet.Online.Login
         //ContextIdentifier in multitenant apps is not the same as Default context in single tenant OnPremise customer.
         public static void OverrideContextIdentifier(SoPrincipal principal, string contextIdentifier)
         {
-            var carrier = SuperOffice.Security.Principal.Private.PrincipalHelper.GetPrincipalCarrier(principal);
+            var carrier = principal.GetPrincipalCarrier();
             carrier.DatabaseContextIdentifier = contextIdentifier;
         }
 

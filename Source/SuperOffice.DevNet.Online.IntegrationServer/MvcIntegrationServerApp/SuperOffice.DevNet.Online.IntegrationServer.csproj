@@ -21,10 +21,10 @@
     <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.7" />
-    <PackageReference Include="SuperOffice.ContinuousDatabase" Version="8.5.7313.1732" />
+    <PackageReference Include="SuperOffice.ContinuousDatabase" Version="9.2.7935.930" />
     <PackageReference Include="SuperOffice.Crm.Online.Core" Version="4.0.7275.1215" />
-    <PackageReference Include="SuperOffice.Crm.Online.IntegrationServices" Version="8.0.6193.207" />
-    <PackageReference Include="SuperOffice.NetServer.Services" Version="8.5.7313.1732" />
+    <PackageReference Include="SuperOffice.Crm.Online.IntegrationServices" Version="9.2.7935.930" />
+    <PackageReference Include="SuperOffice.NetServer.Services" Version="9.2.7935.930" />
   </ItemGroup>
 
   <ItemGroup>

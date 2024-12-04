@@ -4,6 +4,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SuperOffice.NetServer.Core" Version="8.5.7313.1732" />
+    <PackageReference Include="SuperOffice.NetServer.Core" Version="9.2.7935.930" />
   </ItemGroup>
 </Project>
