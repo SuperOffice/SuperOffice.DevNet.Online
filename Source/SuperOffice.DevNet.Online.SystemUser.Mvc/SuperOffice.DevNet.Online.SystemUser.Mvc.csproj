@@ -24,6 +24,10 @@
     <PackageReference Include="SuperOffice.ContinuousDatabase" Version="$(NetserverVersion)" />
     <PackageReference Include="SuperOffice.Crm.Online.Core" Version="4.0.7275.1215" />
     <PackageReference Include="SuperOffice.NetServer.Services" Version="$(NetserverVersion)" />
+
+    <!-- nuget resolutions -->
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" />
+    <PackageReference Include="System.Security.Permissions" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

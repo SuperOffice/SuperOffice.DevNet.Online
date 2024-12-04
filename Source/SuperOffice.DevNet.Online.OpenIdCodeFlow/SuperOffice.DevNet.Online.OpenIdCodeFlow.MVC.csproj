@@ -17,6 +17,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- nuget resolutions -->
+    <PackageReference Include="System.Security.Permissions" Version="6.0.0" />
+
+    <!-- security overrides -->
+    <PackageReference Include="HtmlSanitizer" Version="8.1.870" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
