@@ -2,8 +2,6 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcTest.Controllers
@@ -67,7 +65,7 @@ namespace MvcTest.Controllers
 
             // We don't want XML but JSON response, so force JSON serializer
             _client.ClearHandlers();
-            _client.AddHandler("application/json", new RestSharp.Deserializers.JsonDeserializer());
+            _client.AddHandler("application/json", new RestSharp.Serialization.Json.JsonSerializer());
 
             var request = new RestRequest("v1/Contact", Method.GET);
             // request.AddParameter("$filter", "registeredDate thisYear");
