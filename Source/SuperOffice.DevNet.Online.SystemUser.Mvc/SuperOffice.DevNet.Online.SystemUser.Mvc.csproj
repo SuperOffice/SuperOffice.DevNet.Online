@@ -21,9 +21,9 @@
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
-    <PackageReference Include="SuperOffice.ContinuousDatabase" Version="9.2.7935.930" />
+    <PackageReference Include="SuperOffice.ContinuousDatabase" Version="$(NetserverVersion)" />
     <PackageReference Include="SuperOffice.Crm.Online.Core" Version="4.0.7275.1215" />
-    <PackageReference Include="SuperOffice.NetServer.Services" Version="9.2.7935.930" />
+    <PackageReference Include="SuperOffice.NetServer.Services" Version="$(NetserverVersion)" />
   </ItemGroup>
 
   <ItemGroup>

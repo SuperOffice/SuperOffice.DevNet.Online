@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SuperOffice.NetServer.Services" Version="9.2.7935.930" />
+    <PackageReference Include="SuperOffice.NetServer.Services" Version="$(NetserverVersion)" />
   </ItemGroup>
 
   <ItemGroup>

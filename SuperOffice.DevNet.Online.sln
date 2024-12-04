@@ -37,6 +37,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "REST API", "REST API", "{F5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperOffice.DevNet.Online.OpenIdCodeFlow.MVC", "Source\SuperOffice.DevNet.Online.OpenIdCodeFlow\SuperOffice.DevNet.Online.OpenIdCodeFlow.MVC.csproj", "{855848D5-359D-45A0-88D6-5297388C923A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{9D96C18B-62CA-4643-AEC1-043FE9C929A3}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

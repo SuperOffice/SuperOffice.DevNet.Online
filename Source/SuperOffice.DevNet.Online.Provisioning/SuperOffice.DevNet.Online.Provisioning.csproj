@@ -4,7 +4,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SuperOffice.ContinuousDatabase" Version="9.2.7935.930" />
-    <PackageReference Include="SuperOffice.NetServer.Services" Version="9.2.7935.930" />
+    <PackageReference Include="SuperOffice.ContinuousDatabase" Version="$(NetserverVersion)" />
+    <PackageReference Include="SuperOffice.NetServer.Services" Version="$(NetserverVersion)" />
   </ItemGroup>
 </Project>
